@@ -26,7 +26,7 @@ const Articles = () => {
                 </div>
                 <h3>{article.title}</h3>
                 <section>
-
+                    <p>{article.title}</p>
                 </section>
             </article>;
         });
