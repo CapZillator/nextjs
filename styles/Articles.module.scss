@@ -1,0 +1,16 @@
+/* Articles styles */
+@import "index.scss";
+
+.article {
+
+}
+.sectionTitle {
+    color: $main-white;
+    background-color: #E33A6D;
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 18px;
+    padding: 4px 8px;
+    border-radius: 4px;
+}

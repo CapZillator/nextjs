@@ -1,10 +1,15 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import useArticle from '../lib/useArticle'
+import Articles from '../components/Articles'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 import styles from '../styles/Home.module.scss'
 
 const Home: NextPage = () => {
+  //const { articles, isLoading, isError } = useArticle('home')
+  //if (articles) console.log(articles);
+  //if (isError) console.log('error');
   return (
     <div className={styles.container}>
       <Head>
@@ -15,14 +20,7 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <Header />
-        <article className={styles.article}>
-          <h2>Some header</h2>
-          <section>
-            <p>
-              Some content.
-            </p>
-          </section>
-        </article>
+        <Articles />
       </main>
 
       <Footer />
