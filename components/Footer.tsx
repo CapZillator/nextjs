@@ -3,7 +3,7 @@ import styles from '../styles/Home.module.scss'
 import footerStyles from '../styles/Footer.module.scss'
 
 
-const Footer = () => {
+function Footer() {
 
     const footerLinks = [{title: 'About us', link: '#'}, 
                         {title: 'Help', link: '#'}, 

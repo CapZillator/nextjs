@@ -1,21 +1,6 @@
 /* Footer styles */
-/*
-.footer {
-    display: flex;
-    flex: 1;
-    padding: 2rem 0;
-    border-top: 1px solid #eaeaea;
-    justify-content: center;
-    align-items: center;
-}
-  
-.footer a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1;
-}
-*/
+@import 'variables.module.scss';
+
 .footerWrapper {
     display: flex;
     flex-shrink: 0;
@@ -25,11 +10,11 @@
     border-top: 1px solid #D1D1D1;
     color: #7A7A7A;
     font-size: 14px;
-    max-width: 1200px;
+    max-width: $desktop-screen;
     width: 100%;
     margin: 0 auto;
 
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: $desktop-screen) {
         flex-direction: column;
 
         .socialMediaWrapper {
@@ -37,7 +22,7 @@
         }
     }
 
-    @media screen and (min-width: 1200px) {
+    @media screen and (min-width: $desktop-screen) {
         padding: 23px 0;
 
         .copyrightWrapper {

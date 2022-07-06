@@ -1,12 +1,61 @@
 /* Articles styles */
-@import "index.scss";
+@import 'variables.module.scss';
 
 .article {
+    max-width: $desktop-screen;
+    margin: 20px auto 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas:
+    "Section Date"
+    "Title Title"
+    "Body Body"
+    "ArticleImage ArticleImage";
+    align-items: start;
+    box-shadow: 0px 0px 10px rgba(22, 22, 22, 0.1);
 
+    @media screen and(min-width: $desktop-screen){
+        grid-template-rows: auto auto auto 1fr;
+        grid-template-areas:
+        "Section ArticleImage"
+        "Title ArticleImage"
+        "Body ArticleImage"
+        "Date ArticleImage";
+        border-radius: 8px;
+    }
+}
+.sectionWrapper {
+    grid-area: Section;
+}
+.dateWrapper {
+    grid-area: Date;
+
+    @media screen and(max-width: $desktop-screen){
+        text-align: right;
+    }
+    @media screen and(min-width: $desktop-screen){
+        align-self: end;
+    }
+}
+.titleWrapper {
+    grid-area: Title;
+}
+.bodyWrapper {
+    grid-area: Body;
+}
+.imageWrapper {
+    grid-area: ArticleImage;
+    align-self: end;
+    justify-self: center;
+
+    @media screen and(min-width: $desktop-screen){
+        justify-self: end;
+    }
 }
 .sectionTitle {
     color: $main-white;
-    background-color: #E33A6D;
+    background-color: $pink-base;
     text-transform: capitalize;
     font-weight: 600;
     font-size: 16px;

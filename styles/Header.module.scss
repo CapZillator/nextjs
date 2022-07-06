@@ -1,18 +1,23 @@
 /* Header styles */
-$base-pink: #E33A6D;
+@import 'variables.module.scss';
 
 .headerWrapper {
     width: 100%;
     height: fit-content;
     box-shadow: 0px 2px 10px rgba(22, 22, 22, 0.1);
-    background: #FBFBFB;
+    background: $main-white;
 
     .header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        max-width: 1200px;
+        max-width: $desktop-screen;
         margin: 0 auto; 
+        padding: 16px 15px;
+
+        @media screen and(min-width: $desktop-screen) {
+            padding: 0;
+        }
     }
 
     .headerMenuLinks > ul {
@@ -33,16 +38,16 @@ $base-pink: #E33A6D;
         li:hover, 
         li:active {
             color: #161616;
-            border-bottom: 4px solid $base-pink;
+            border-bottom: 4px solid $pink-base;
         }
     }    
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: $desktop-screen) {
     .headerMenuLinks {
         display: none;
     }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: $desktop-screen) {
     .headerMenuButton {
         display: none;
     }

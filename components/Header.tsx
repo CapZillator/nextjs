@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import headerStyles from '../styles/Header.module.scss'
 
-const Header = () => {
+function Header() {
     const headerLinks = [{title: 'Home', link: '#'}, 
                         {title: 'World', link: '#'}, 
                         {title: 'Automobiles', link: '#'}, 
