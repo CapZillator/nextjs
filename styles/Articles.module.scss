@@ -1,6 +1,9 @@
 /* Articles styles */
 @import 'variables.module.scss';
 
+$article-padding: 20px 15px;
+$article-padding-small: 10px 15px;
+
 .article {
     max-width: $desktop-screen;
     margin: 20px auto 0 auto;
@@ -27,9 +30,11 @@
 }
 .sectionWrapper {
     grid-area: Section;
+    padding: $article-padding;
 }
 .dateWrapper {
     grid-area: Date;
+    padding: $article-padding;
 
     @media screen and(max-width: $desktop-screen){
         text-align: right;
@@ -40,9 +45,11 @@
 }
 .titleWrapper {
     grid-area: Title;
+    padding: $article-padding-small;
 }
 .bodyWrapper {
     grid-area: Body;
+    padding: $article-padding-small;
 }
 .imageWrapper {
     grid-area: ArticleImage;

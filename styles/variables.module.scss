@@ -2,6 +2,19 @@
 
 $main-white: #FBFBFB;
 $pink-base: #E33A6D;
+$dark-grey: #7A7A7A;
+$dark-hover: #161616;
 
 /* Screen sizes*/
 $desktop-screen: 1200px;
+
+/* Fonts sets */
+@mixin footerFont {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+/* Transition time */
+$standart-transition: .3s;
