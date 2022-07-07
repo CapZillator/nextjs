@@ -1,8 +1,9 @@
+import React, { FunctionComponent } from 'react'
 import Image from 'next/image'
-import footerStyles from '../styles/Footer.module.scss'
+import footerStyles from './Footer.module.scss'
 
 
-function Footer() {
+export const Footer: FunctionComponent = () => {
 
     const footerLinks = [{title: 'About us', link: '#'}, 
                         {title: 'Help', link: '#'}, 
@@ -31,5 +32,3 @@ function Footer() {
         </footer>
     )
 }
-
-export default Footer

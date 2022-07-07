@@ -1,8 +1,9 @@
+import React, { FunctionComponent } from 'react'
 import Image from 'next/image'
-import headerStyles from '../styles/Header.module.scss'
+import headerStyles from './Header.module.scss'
 import Link from 'next/link'
 
-function Header() {
+export const Header: FunctionComponent = () => {
     const headerLinks = [{title: 'Home', link: '#'}, 
                         {title: 'World', link: '#'}, 
                         {title: 'Automobiles', link: '#'}, 
@@ -27,5 +28,3 @@ function Header() {
         </header>
     )
 }
-
-export default Header
