@@ -11,17 +11,17 @@ function Header() {
         return <li key={link.title}><a href={link.link}>{link.title}</a></li>;
     });
     return (
-        <div className={headerStyles.headerWrapper}>
+        <header className={headerStyles.headerWrapper}>
             <div className={headerStyles.header}>
                 <Image src="/logo.svg" alt="Main Logo" width={129} height={28} />
                 <div className={headerStyles.headerMenuButton}>
                     <Image src="/burger-menu.svg" alt="Menu button" width={24} height={20}/>
                 </div>
-                <div className={headerStyles.headerMenuLinks}>
+                <nav className={headerStyles.headerMenuLinks}>
                     <ul>{headerLinksBlock}</ul>
-                </div>
+                </nav>
             </div>
-        </div>
+        </header>
     )
 }
 

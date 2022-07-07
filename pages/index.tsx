@@ -16,7 +16,7 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <Header />
-        <Articles />
+        <Articles category={'arts'}/>
       </main>
       <Footer />
     </div>

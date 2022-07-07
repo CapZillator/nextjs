@@ -21,11 +21,10 @@
     }
 
     .headerMenuLinks > ul {
+        @include headerFont;
         margin: 0;
         padding: 0;
         list-style: none;
-        font-weight: 600;
-        font-size: 16px;
         color: $dark-grey;
 
         li {
@@ -33,7 +32,7 @@
             margin: 0 16px;
             padding: 18px 0;
             border-bottom: 4px solid transparent;
-            transition: .3s;
+            transition: $standart-transition;
         }
         li:hover, 
         li:active {

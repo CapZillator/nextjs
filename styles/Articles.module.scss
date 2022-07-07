@@ -18,6 +18,11 @@ $article-padding-small: 10px 15px;
     align-items: start;
     box-shadow: 0px 0px 10px rgba(22, 22, 22, 0.1);
 
+    &:hover {
+        background-color: rgba(0,0,0,.1);
+        transition: $standart-transition;
+    }
+
     @media screen and(min-width: $desktop-screen){
         grid-template-rows: auto auto auto 1fr;
         grid-template-areas:
@@ -69,4 +74,15 @@ $article-padding-small: 10px 15px;
     line-height: 18px;
     padding: 4px 8px;
     border-radius: 4px;
+}
+.errorMessage, 
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $pink-base;
+    padding: .5rem 1rem;
+    color: $main-white;
+    border-radius: $border-radius-small;
 }

@@ -3,13 +3,13 @@ import useArticle from "../lib/useArticle"
 import styles from "../styles/Articles.module.scss"
 import { convertDateString } from "../lib/utils"
 
-function Articles() {
-    const { articles, isLoading, isError } = useArticle('home');
+/* Return list of articles by incoming category */
+function Articles({category = 'home'}) {
+    const { articles, isLoading, isError } = useArticle(category);//Get articles
     
-
     let content;
-    if (isError) content = <div>Error message</div>;
-    if (isLoading) content = <div>Loading...</div>;
+    if (isError) content = <div className={styles.errorMessage}>Error message</div>;
+    if (isLoading) content = <div className={styles.loader}>Loading...</div>;
     if (articles){
         console.log(articles);
         content = articles.results.map((article: any) => {
@@ -25,7 +25,7 @@ function Articles() {
                     <p>{article.title}</p>
                 </section>
                 <div className={styles.imageWrapper}>
-                    <Image src={article.multimedia[1].url} alt="Menu button" width={article.multimedia[1].width} height={article.multimedia[1].height}/>
+                    <Image src={article.multimedia[1].url} alt={article.title} width={article.multimedia[1].width} height={article.multimedia[1].height}/>
                 </div> 
             </article>;
         });
