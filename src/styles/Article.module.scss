@@ -1,0 +1,9 @@
+/* Single article styles */
+@import 'variables.module.scss';
+
+.article {
+    position: relative;
+    max-width: $desktop-screen;
+    margin: 0 auto;
+    background-color: $main-white;
+}

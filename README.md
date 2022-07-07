@@ -1,8 +1,10 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
+First, create your local .env.local file and add API_KEY='your_key'
+You can get the key at https://developer.nytimes.com/
 
-First, run the development server:
+Then, run the development server:
 
 ```bash
 npm run dev
