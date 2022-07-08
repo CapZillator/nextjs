@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react'
 import Image from 'next/image'
 import headerStyles from './Header.module.scss'
-import Link from 'next/link'
+//import Link from 'next/link'
 
 export const Header: FunctionComponent = () => {
     const headerLinks = [{title: 'Home', link: '#'}, 
@@ -15,9 +15,7 @@ export const Header: FunctionComponent = () => {
     return (
         <header className={headerStyles.headerWrapper}>
             <div className={headerStyles.header}>
-                <Link href="/">
                     <Image src="/logo.svg" alt="Main Logo" width={129} height={28} />
-                </Link>
                 <div className={headerStyles.headerMenuButton}>
                     <Image src="/burger-menu.svg" alt="Menu button" width={24} height={20}/>
                 </div>

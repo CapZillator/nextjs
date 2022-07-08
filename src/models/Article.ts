@@ -1,4 +1,4 @@
-type ArticleMultimedia = {
+export type ArticleMultimedia = {
     caption: string,
     copyright: string,
     format: string,
@@ -28,4 +28,12 @@ export type Article = {
     updated_date: string,
     uri: string,
     url: string
+}
+export type ArticleResponse = {
+    copyright: string,
+    last_updated: string,
+    num_results: number,
+    results: Article[],
+    section: string,
+    status: string
 }
