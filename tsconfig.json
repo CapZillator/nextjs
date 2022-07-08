@@ -19,7 +19,7 @@
       "@/components/*": ["src/components/*"],
       "@/constants/*": ["src/constants/*"],
       "@/hooks/*": ["src/hooks/*"],
-      "@/lib/*": ["src/lib/*"],
+      "@/utils/*": ["src/utils/*"],
       "@/models/*": ["src/models/*"],
       "@/pages/*": ["src/pages/*"],
       "@/service/*": ["src/service/*"],

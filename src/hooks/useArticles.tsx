@@ -1,13 +1,17 @@
-import useSWR from 'swr'
-import { fetchArticlesData } from '@/service/fetch'
+import { BASE_URL_PATH } from '@/constants/global';
+
+import useSWR from 'swr';
+
+import { storiesFetcher } from '@/service/storiesFetcher';
 
 export const useArticles = (sectionTitle?: string) => {
-    const key = `https://api.nytimes.com/svc/topstories/v2/${sectionTitle}`
-    const { data, error } = useSWR(key, fetchArticlesData)
+    const key = `${BASE_URL_PATH}/${sectionTitle}`;
+
+    const { data, error } = useSWR(key, storiesFetcher);
 
     return {
         articles: data,
         isLoading: !error && !data,
         isError: error
-    }
-}
+    };
+};

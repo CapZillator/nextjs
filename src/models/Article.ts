@@ -1,13 +1,12 @@
-export type ArticleMultimedia = {
-    caption: string,
+export type TopStoriesData = {
     copyright: string,
-    format: string,
-    height: number,
-    subtype: string,
-    type: string,
-    url: string,
-    width: number
+    last_updated: string,
+    num_results: number,
+    results: Article[],
+    section: string,
+    status: string
 }
+
 export type Article = {
     abstract: string,
     byline: string,
@@ -29,11 +28,14 @@ export type Article = {
     uri: string,
     url: string
 }
-export type ArticleResponse = {
+
+export type ArticleMultimedia = {
+    caption: string,
     copyright: string,
-    last_updated: string,
-    num_results: number,
-    results: Article[],
-    section: string,
-    status: string
+    format: string,
+    height: number,
+    subtype: string,
+    type: string,
+    url: string,
+    width: number
 }

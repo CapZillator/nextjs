@@ -1,6 +1,8 @@
 import Head from 'next/head'
+
 import { Footer } from '@/components/footer/Footer'
 import { Header } from '@/components/header/Header'
+
 import styles from '@/styles/Home.module.scss'
 import articleStyles from '@/styles/Article.module.scss'
 

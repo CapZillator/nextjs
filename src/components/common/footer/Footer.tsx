@@ -1,6 +1,8 @@
 import React, { FunctionComponent } from 'react'
+
 import Image from 'next/image'
-import footerStyles from './Footer.module.scss'
+
+import footerStyles from './styles.module.scss'
 
 
 export const Footer: FunctionComponent = () => {
