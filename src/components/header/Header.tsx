@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from 'react'
 import Image from 'next/image'
 import headerStyles from './Header.module.scss'
+//import { Test } from '../../../public/Test'
 //import Link from 'next/link'
 
 export const Header: FunctionComponent = () => {

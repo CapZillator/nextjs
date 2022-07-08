@@ -1,5 +1,5 @@
 import useSWR from 'swr'
-import { fetchArticlesData } from '../service/fetch'
+import { fetchArticlesData } from '@/service/fetch'
 
 export const useArticles = (sectionTitle?: string) => {
     const key = `https://api.nytimes.com/svc/topstories/v2/${sectionTitle}`

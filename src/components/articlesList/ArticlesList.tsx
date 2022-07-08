@@ -2,14 +2,14 @@ import React, { FunctionComponent } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import { useArticles } from '../../hooks/useArticles'
-import { Footer } from '../footer/Footer'
-import { Header } from '../header/Header'
+import { Footer } from '@/components/footer/Footer'
+import { Header } from '@/components/header/Header'
 import styles from "./ArticlesList.module.scss"
-import globalStyles from '../../styles/index.module.scss'
-import { convertDateString } from "../../lib/utils"
+import globalStyles from '@/styles/index.module.scss'
+import { convertDateString } from "@/lib/utils"
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import type { Article } from '../../models/Article'
+import type { Article } from '@/models/Article'
 
 /* Return list of articles by incoming category */
 export const ArticlesList: FunctionComponent = () => {

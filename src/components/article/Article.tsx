@@ -1,9 +1,9 @@
 import React, { FunctionComponent } from 'react'
 import Head from 'next/head'
-import { Footer } from '../footer/Footer'
-import { Header } from '../header/Header'
+import { Footer } from '@/components/footer/Footer'
+import { Header } from '@/components/header/Header'
 import { useRouter } from 'next/router'
-import styles from '../styles/index.module.scss'
+import styles from '@/styles/index.module.scss'
 import articleStyles from './Article.module.scss'
 
 export const Article: FunctionComponent = () => {

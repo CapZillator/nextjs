@@ -1,5 +1,5 @@
-import { apiPath } from '../constants/global'
-import type { ArticleResponse } from '../models/Article'
+import { apiPath } from '@/constants/global'
+import type { ArticleResponse } from '@/models/Article'
 
 const apiKey = process.env.API_KEY
 
