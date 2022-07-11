@@ -1,5 +1,4 @@
 import React, { FunctionComponent } from 'react';
-
 import Image from 'next/image';
 
 import headerStyles from './styles.module.scss';

@@ -1,5 +1,4 @@
 import React, { FunctionComponent } from 'react';
-
 import { useRouter } from 'next/router';
 
 import articleStyles from './styles.module.scss';

@@ -1,13 +1,15 @@
 import useSWR from 'swr';
-
-import { BASE_URL_PATH } from '@/constants/global';
-
-import { storiesFetcher } from '@/service/storiesFetcher';
+import { BASE_URL_PATH, TOP_STORIES_PATH } from 'constants/global';
+import { storiesFetcher } from 'service/storiesFetcher';
 
 export const useArticles = (category = 'home') => {
-  const key = `${BASE_URL_PATH}/${category}`;
-
-  const { data, error } = useSWR(key, storiesFetcher);
+  const { data, error } = useSWR(
+    `${BASE_URL_PATH}/${category}`,
+    storiesFetcher.bind(
+      null,
+      `${BASE_URL_PATH}${TOP_STORIES_PATH}/${category}.json`
+    )
+  );
 
   return {
     articles: data,

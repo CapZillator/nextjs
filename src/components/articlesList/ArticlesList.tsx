@@ -1,18 +1,14 @@
 import React, { FunctionComponent } from 'react';
-
 import Image from 'next/image';
-
-import type { Article } from '@/models/Article';
-
-import { useArticles } from '@/hooks/useArticles';
-
-import { convertDateString } from '@/utils/convertDateString';
+import type { Article } from 'models/Article';
+import { useArticles } from 'hooks/useArticles';
+import { convertDateString } from 'formatters/date';
 
 import styles from './styles.module.scss';
 
 /* Return list of articles */
 export const ArticlesList: FunctionComponent = () => {
-  const { articles, isLoading, isError } = useArticles('home'); //Get articles
+  const { articles, isLoading, isError } = useArticles('home');
 
   if (isError) {
     return <div className={styles.errorMessage}>Error message</div>;
