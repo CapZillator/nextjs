@@ -24,6 +24,13 @@ $desktop-screen: 1200px;
     line-height: 24px;
 }
 
+@mixin articleHeader {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+}
+
 /* Border radiuses*/
 $border-radius-small: 4px;
 

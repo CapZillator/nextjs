@@ -51,6 +51,7 @@ $article-padding-small: 10px 15px;
 .titleWrapper {
     grid-area: Title;
     padding: $article-padding-small;
+    @include articleHeader;
 }
 .bodyWrapper {
     grid-area: Body;
