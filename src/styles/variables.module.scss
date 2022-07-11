@@ -15,13 +15,16 @@ $desktop-screen: 1200px;
     font-size: 14px;
     line-height: 18px;
 }
+
 @mixin headerFont {
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
     line-height: 24px;
 }
+
 /* Border radiuses*/
 $border-radius-small: 4px;
+
 /* Transition time */
 $standart-transition: .3s;

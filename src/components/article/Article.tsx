@@ -5,7 +5,9 @@ import { useRouter } from 'next/router';
 import articleStyles from './styles.module.scss';
 
 export const Article: FunctionComponent = () => {
+
   const router = useRouter();
+  
   const { id } = router.query;
 
   return <article className={articleStyles.article}>

@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       </main>
       <Footer />
     </div>
-  </>
+  </>;
 };
 
 export default MyApp;

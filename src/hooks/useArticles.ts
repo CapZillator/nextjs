@@ -1,11 +1,12 @@
-import { BASE_URL_PATH } from '@/constants/global';
-
 import useSWR from 'swr';
+
+import { BASE_URL_PATH } from '@/constants/global';
 
 import { storiesFetcher } from '@/service/storiesFetcher';
 
-export const useArticles = (sectionTitle?: string) => {
-    const key = `${BASE_URL_PATH}/${sectionTitle}`;
+export const useArticles = (category = 'home') => {
+
+    const key = `${BASE_URL_PATH}/${category}`;
 
     const { data, error } = useSWR(key, storiesFetcher);
 

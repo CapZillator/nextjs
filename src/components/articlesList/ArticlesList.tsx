@@ -1,18 +1,18 @@
 import React, { FunctionComponent } from 'react';
 
-import { useArticles } from '@/hooks/useArticles';
-
-import Head from 'next/head';
 import Image from 'next/image';
 
-import { convertDateString } from "@/utils/convertDateString";
 import type { Article } from '@/models/Article';
 
+import { useArticles } from '@/hooks/useArticles';
+
+import { convertDateString } from "@/utils/convertDateString";
+
 import styles from "./styles.module.scss";
-//import globalStyles from '@/styles/index.module.scss';
 
 /* Return list of articles */
 export const ArticlesList: FunctionComponent = () => {
+
     const { articles, isLoading, isError } = useArticles('home');//Get articles
 
     if (isError) {
@@ -23,14 +23,12 @@ export const ArticlesList: FunctionComponent = () => {
         return <div className={styles.loader}>Loading...</div>;
     };
 
-    if (!articles) {
-        return <div className={styles.errorMessage}>Error message</div>;
+    if (articles && !Array.isArray(articles.results)) {
+        return <div className={styles.errorMessage}>Not found</div>;
     };
 
-    //<Image src={article.multimedia[1].url} alt={article.title} width={article.multimedia[1].width} height={article.multimedia[1].height} />
-
     return <>
-        {articles?.results.map((article: Article) => {
+        {articles?.results?.map((article: Article) => {
             return <article key={article.short_url} className={styles.article}>
                 <div className={styles.sectionWrapper}>
                     <span className={styles.sectionTitle}>{article.section}</span>
@@ -43,6 +41,10 @@ export const ArticlesList: FunctionComponent = () => {
                     <p>{article.abstract}</p>
                 </section>
                 <div className={styles.imageWrapper}>
+                    <Image src={article.multimedia ? article.multimedia[1].url : '/logo.svg'}
+                        alt={article.multimedia ? article.title : 'No image'}
+                        width={article.multimedia ? article.multimedia[1].width : 129}
+                        height={article.multimedia ? article.multimedia[1].height : 28} />
                 </div>
             </article>;
         })}

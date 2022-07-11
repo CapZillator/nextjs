@@ -5,7 +5,7 @@ export type TopStoriesData = {
     results: Article[],
     section: string,
     status: string
-}
+};
 
 export type Article = {
     abstract: string,
@@ -27,7 +27,7 @@ export type Article = {
     updated_date: string,
     uri: string,
     url: string
-}
+};
 
 export type ArticleMultimedia = {
     caption: string,
@@ -38,4 +38,4 @@ export type ArticleMultimedia = {
     type: string,
     url: string,
     width: number
-}
+};
