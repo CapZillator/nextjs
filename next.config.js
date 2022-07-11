@@ -2,11 +2,11 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['static01.nyt.com']
+    domains: ['static01.nyt.com'],
   },
   env: {
-    API_KEY: process.env.API_KEY
-  }
-}
+    API_KEY: process.env.API_KEY,
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

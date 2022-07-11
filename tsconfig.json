@@ -23,7 +23,7 @@
       "@/models/*": ["src/models/*"],
       "@/pages/*": ["src/pages/*"],
       "@/service/*": ["src/service/*"],
-      "@/styles/*": ["src/styles/*"],
+      "@/styles/*": ["src/styles/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

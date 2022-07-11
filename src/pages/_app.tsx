@@ -7,15 +7,17 @@ import '@/styles/globals.scss';
 import styles from '@/styles/index.module.scss';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <>
-    <div className={styles.container}>
-      <main className={styles.main}>
-        <Header />
-        <Component {...pageProps} />
-      </main>
-      <Footer />
-    </div>
-  </>;
-};
+  return (
+    <>
+      <div className={styles.container}>
+        <main className={styles.main}>
+          <Header />
+          <Component {...pageProps} />
+        </main>
+        <Footer />
+      </div>
+    </>
+  );
+}
 
 export default MyApp;
