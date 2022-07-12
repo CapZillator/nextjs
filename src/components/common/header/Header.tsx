@@ -16,12 +16,12 @@ export const Header: FunctionComponent = () => {
   return (
     <header className={headerStyles.headerWrapper}>
       <div className={headerStyles.header}>
-        <Link href='/'>
-            <a>
-                <Image src="/logo.svg" alt="Main Logo" width={129} height={28} />
-            </a>
+        <Link href="/">
+          <a>
+            <Image src="/logo.svg" alt="Main Logo" width={129} height={28} />
+          </a>
         </Link>
-        
+
         <div className={headerStyles.headerMenuButton}>
           <Image
             src="/burger-menu.svg"
