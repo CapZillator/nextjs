@@ -1,9 +1,48 @@
 /* Single article styles */
 @import '@/styles/variables.module.scss';
 
+$indent-sm: 20px 15px;
+
 .article {
     position: relative;
-    max-width: $desktop-screen;
-    margin: 0 auto;
+    max-width: 1000px;
+    margin: 20px auto;
     background-color: $main-white;
+}
+
+.articleHeadWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & > div {
+        margin: $indent-sm;
+    }
+
+    @media screen and(min-width: $desktop-screen){
+        justify-content: flex-start;
+
+        & > div:nth-of-type(2) {
+            margin-left: 0;
+        }
+    }
+}
+
+
+.sectionHeader {
+    @include sectionHeader;
+}
+
+.mainArticleHeader {
+    @include mainArticleHeader;
+    padding: $indent-sm;
+}
+
+.articleParagraph {
+    padding: $indent-sm;
+}
+
+.errorMessage, 
+.loader {
+    @include articleLoader;
 }

@@ -31,8 +31,38 @@ $desktop-screen: 1200px;
     line-height: 28px;
 }
 
+@mixin sectionHeader {
+    color: $main-white;
+    background-color: $pink-base;
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 18px;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+@mixin mainArticleHeader {
+    color: $dark-hover;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 38px;
+}
+
 /* Border radiuses*/
 $border-radius-small: 4px;
 
 /* Transition time */
 $standart-transition: .3s;
+
+/* Loaders */
+@mixin articleLoader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $pink-base;
+    padding: .5rem 1rem;
+    color: $main-white;
+    border-radius: $border-radius-small;
+}

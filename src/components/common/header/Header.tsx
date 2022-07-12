@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
 
 import headerStyles from './styles.module.scss';
@@ -15,8 +16,12 @@ export const Header: FunctionComponent = () => {
   return (
     <header className={headerStyles.headerWrapper}>
       <div className={headerStyles.header}>
-        <Image src="/logo.svg" alt="Main Logo" width={129} height={28} />
-
+        <Link href='/'>
+            <a>
+                <Image src="/logo.svg" alt="Main Logo" width={129} height={28} />
+            </a>
+        </Link>
+        
         <div className={headerStyles.headerMenuButton}>
           <Image
             src="/burger-menu.svg"

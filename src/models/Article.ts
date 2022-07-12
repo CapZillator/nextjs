@@ -1,12 +1,3 @@
-export type TopStoriesData = {
-  copyright: string;
-  last_updated: string;
-  num_results: number;
-  results: Article[];
-  section: string;
-  status: string;
-};
-
 export type Article = {
   abstract: string;
   byline: string;
