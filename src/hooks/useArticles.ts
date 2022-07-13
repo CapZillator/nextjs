@@ -1,5 +1,5 @@
 import useSWR from 'swr';
-import { BASE_URL_PATH, TOP_STORIES_PATH, NYC_API_KEY } from 'constants/global';
+import { TOP_STORIES_PATH, NYC_API_KEY } from 'constants/global';
 import { storiesFetcher } from 'service/storiesFetcher';
 
 export const useArticles = (category = 'home') => {
