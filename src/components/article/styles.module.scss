@@ -1,47 +1,20 @@
 /* Single article styles */
 @import 'styles/variables.module.scss';
+@import 'styles/mixins.module.scss';
 
 .article {
     position: relative;
-    max-width: 1000px;
+    max-width: $screen-semi-md;
     margin: 0 auto;
     background-color: $main-white;
 
-    .articleHeadWrapper {
+    .articleHead {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 20px 15px;
-    }
 
-    .sectionHeader {
-        @include sectionHeader;
-    }
-
-    .pub_date {
-        @include smallFont;
-    }
-    
-    .imageWrapper {
-        margin-bottom: 20px;
-    }
-
-    .mainArticleHeader {
-        @include mainArticleHeader;
-        padding: 0 15px;
-        margin-bottom: 40px;
-    }
-    
-    .articleParagraph {
-        padding: 0 15px;
-        margin-bottom: 20px;
-        @include articleParagraphFont;
-    }
-
-    @media (min-width: $screen-sm){
-        padding: 0 15px;
-
-        .articleHeadWrapper {
+        @media (min-width: $screen-sm){
             justify-content: flex-start;
             padding: 40px 0;
     
@@ -49,21 +22,51 @@
                 margin-left: 20px;
             }
         }
+    }
 
-        .imageWrapper {
+    .sectionHeader {
+        @include sectionHeader;
+    }
+
+    .pubDate {
+        @include smallFont;
+    }
+    
+    .image {
+        margin-bottom: 20px;
+
+        @media (min-width: $screen-sm){
             margin-bottom: 40px;
         }
+    }
 
-        .mainArticleHeader {
+    .contentHeader {
+        @include mainArticleHeader;
+        padding: 0 15px;
+        margin-bottom: 40px;
+
+        @media (min-width: $screen-sm){
             padding: 0;
         }
+    }
+    
+    .paragraph {
+        @include articleParagraphFont;
+        padding: 0 15px;
+        margin-bottom: 20px;
+       
 
-        .articleParagraph {
+        @media (min-width: $screen-sm){
             padding: 0;
             margin-bottom: 40px;
         }
     }
-    @media (min-width: 1000px){
+
+    @media (min-width: $screen-sm){
+        padding: 0 15px;
+    }
+
+    @media (min-width: $screen-semi-md){
         padding: 0;
     }
 }

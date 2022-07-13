@@ -29,6 +29,7 @@
 
     .menuLinks {
         display: none;
+        
         @media (min-width: $screen-sm) {
             display: block;
         }

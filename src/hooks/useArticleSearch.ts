@@ -1,27 +1,14 @@
 import useSWR from 'swr';
-import {
-  ARTICLE_SEARCH_PATH,
-  NYC_ARTICLE_PATH,
-  NYC_API_KEY,
-} from 'constants/global';
-import { storiesFetcher } from 'service/storiesFetcher';
+import { articleFetcher } from 'service/articlesFetcher';
 
-export const useArticleSearch = (category = 'home', header: string) => {
-  const { data, error } = useSWR(
-    `${category}/${header}`,
-    storiesFetcher.bind(
-      null,
-      `${ARTICLE_SEARCH_PATH}.json?fq=uri:("${NYC_ARTICLE_PATH}${header}")&api-key=${NYC_API_KEY}`
-    )
-  );
-
-  const isFound =
-    data?.response?.docs && data.response.docs.length > 0 ? true : false;
+export const useArticleSearch = (id: string) => {
+  const { data, error } = useSWR(id, articleFetcher);
 
   return {
     searchResult: data,
     isLoading: !error && !data,
     isError: error,
-    isFound: isFound,
+    isFound:
+      data?.response?.docs && data.response.docs.length > 0 ? true : false,
   };
 };
