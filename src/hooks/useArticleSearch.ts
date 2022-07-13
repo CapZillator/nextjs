@@ -11,7 +11,7 @@ export const useArticleSearch = (category = 'home', header: string) => {
     `${category}/${header}`,
     storiesFetcher.bind(
       null,
-      `${ARTICLE_SEARCH_PATH}.json?q=${category}&fq=uri:("${NYC_ARTICLE_PATH}${header}")&api-key=${NYC_API_KEY}`
+      `${ARTICLE_SEARCH_PATH}.json?fq=uri:("${NYC_ARTICLE_PATH}${header}")&api-key=${NYC_API_KEY}`
     )
   );
 
