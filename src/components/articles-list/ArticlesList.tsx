@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react';
 import { useMediaQuery } from 'usehooks-ts';
 import type { Article as ArticleModel } from 'models/Article';
 import { useArticles } from 'hooks/useArticles';
-import { ArticlePreview } from './articlePreview/ArticlePreview';
+import { ArticlePreview } from './article-preview/ArticlePreview';
 
 import styles from './styles.module.scss';
 

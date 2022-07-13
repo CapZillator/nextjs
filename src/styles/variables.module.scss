@@ -15,45 +15,6 @@ $screen-md: 1200px;
 $font-style-thin: 400;
 $font-style-bolder: 600;
 
-@mixin smallFont {
-    font-style: normal;
-    font-weight: $font-style-thin;
-    font-size: 14px;
-    line-height: 18px;
-}
-
-@mixin articleParagraphFont {
-    font-style: normal;
-    font-weight: $font-style-thin;
-    font-size: 16px;
-    line-height: 24px;
-}
-
-@mixin headerFont {
-    font-style: normal;
-    font-weight: $font-style-bolder;
-    font-size: 16px;
-    line-height: 24px;
-}
-
-@mixin mainArticleHeader {
-    color: $dark-hover;
-    font-weight: $font-style-bolder;
-    font-size: 28px;
-    line-height: 38px;
-}
-
-@mixin sectionHeader {
-    color: $main-white;
-    background-color: $pink-base;
-    text-transform: capitalize;
-    font-weight: $font-style-bolder;
-    font-size: 16px;
-    line-height: 18px;
-    padding: 4px 8px;
-    border-radius: 4px;
-}
-
 /* Border radiuses*/
 $border-radius-sm: 4px;
 $border-radius-st: 8px;
@@ -63,15 +24,4 @@ $standart-transition: .3s;
 
 /* Shadows */
 $shadow-sm: 0px 0px 10px rgba(22, 22, 22, 0.1);
-
-/* Loaders */
-@mixin articleLoader {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: $pink-base;
-    padding: .5rem 1rem;
-    color: $main-white;
-    border-radius: $border-radius-sm;
-}
+$shadow-md: 0px 2px 10px rgba(22, 22, 22, 0.1);

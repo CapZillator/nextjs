@@ -1,0 +1,6 @@
+@import 'styles/mixins.module.scss';
+
+.errorMessage, 
+.loader {
+    @include articleLoader;
+}

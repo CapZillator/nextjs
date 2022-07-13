@@ -1,62 +1,45 @@
 import React, { FunctionComponent } from 'react';
-import Image from 'next/image';
+import { Twitter } from './svg/Twitter';
+import { Facebook } from './svg/Facebook';
+import { Instagram } from './svg/Instagram';
 
-import footerStyles from './styles.module.scss';
+import styles from './styles.module.scss';
+
+const FOOTER_LINKS = [
+  { title: 'About us', link: '#' },
+  { title: 'Help', link: '#' },
+  { title: 'Advertise', link: '#' },
+  { title: 'Privacy Policy', link: '#' },
+  { title: 'Terms of Service', link: '#' },
+];
 
 export const Footer: FunctionComponent = () => {
-  const footerLinks = [
-    { title: 'About us', link: '#' },
-    { title: 'Help', link: '#' },
-    { title: 'Advertise', link: '#' },
-    { title: 'Privacy Policy', link: '#' },
-    { title: 'Terms of Service', link: '#' },
-  ];
-
   return (
-    <footer className={footerStyles.footerWrapper}>
-      <ul className={footerStyles.linksWrapper}>
-        {footerLinks.map((link) => {
-          return (
-            <li key={link.title}>
-              <a href={link.link}>{link.title}</a>
-            </li>
-          );
-        })}
-      </ul>
-      <div className={footerStyles.socialMediaWrapper}>
-        <div className={footerStyles.socialMediaIconWrapper}>
+    <footer className={styles.footer}>
+      <div className={styles.content}>
+        <ul className={styles.links}>
+          {FOOTER_LINKS.map((link) => {
+            return (
+              <li key={link.title}>
+                <a href={link.link}>{link.title}</a>
+              </li>
+            );
+          })}
+        </ul>
+        <div className={styles.socialMedia}>
           <a href="#">
-            <Image
-              src="/twitter.svg"
-              alt="Our Twitter"
-              width={35}
-              height={28}
-            />
+            <Twitter style={styles.socialMediaIcon} />
+          </a>
+          <a href="#">
+            <Facebook style={styles.socialMediaIcon} />
+          </a>
+          <a href="#">
+            <Instagram style={styles.socialMediaIcon} />
           </a>
         </div>
-        <div className={footerStyles.socialMediaIconWrapper}>
-          <a href="#">
-            <Image
-              src="/facebook.svg"
-              alt="Our Facebook"
-              width={31}
-              height={30}
-            />
-          </a>
+        <div className={styles.copyright}>
+          {`© ${new Date().getFullYear()} Best News`}
         </div>
-        <div className={footerStyles.socialMediaIconWrapper}>
-          <a href="#">
-            <Image
-              src="/instagram.svg"
-              alt="Our Instagram"
-              width={27}
-              height={28}
-            />
-          </a>
-        </div>
-      </div>
-      <div className={footerStyles.copyrightWrapper}>
-        {`© ${new Date().getFullYear()} Best News`}
       </div>
     </footer>
   );

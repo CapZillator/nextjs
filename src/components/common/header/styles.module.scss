@@ -1,59 +1,56 @@
 /* Header styles */
 @import 'styles/variables.module.scss';
+@import 'styles/mixins.module.scss';
 
-.headerWrapper {
+.header {
+    @include headerFont;
     position: relative;
     width: 100%;
-    height: fit-content;
-    box-shadow: 0px 2px 10px rgba(22, 22, 22, 0.1);
-    background: $main-white;
+    color: $dark-grey;
+    box-shadow: $shadow-md;
     z-index: 50;
 
-    .header {
+    .content {
         display: flex;
         justify-content: space-between;
         align-items: center;
         max-width: $screen-md;
-        margin: 0 auto; 
+        margin: 0 auto;
         padding: 16px 15px;
 
-        @media screen and(min-width: $screen-md) {
+        @media (min-width: $screen-sm) {
+            padding: 0 15px;
+        }
+
+        @media (min-width: $screen-md) {
             padding: 0;
         }
     }
 
-    .headerMenuLinks > ul {
-        @include headerFont;
-        margin: 0;
-        padding: 0;
-        color: $dark-grey;
+    .menuLinks {
+        display: none;
+        @media (min-width: $screen-sm) {
+            display: block;
+        }
 
         li {
             display: inline-block;
-            margin: 0 16px;
-            padding: 18px 0;
+            margin-left: 32px;
+            padding: 18px 0 14px 0;
             border-bottom: 4px solid transparent;
             transition: $standart-transition;
-        }
-        
-        li:hover, 
-        li:active {
-            color: $dark-black;
-            border-bottom: 4px solid $pink-base;
-        }
-    }    
-}
-@media screen and (max-width: $screen-md) {
-    .headerMenuLinks {
-        display: none;
-    }
-}
-@media screen and (min-width: $screen-md) {
-    .headerMenuButton {
-        display: none;
-    }
 
-    .headerMenuLinks {
-        display: block;
+            &:hover, 
+            &:active {
+                color: $dark-black;
+                border-bottom: 4px solid $pink-base;
+            }
+        }
+    } 
+
+    .menuButton {
+        @media (min-width: $screen-sm) {
+            display: none;
+        }
     }
 }

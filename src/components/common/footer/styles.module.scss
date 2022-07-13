@@ -1,74 +1,85 @@
 /* Footer styles */
 @import 'styles/variables.module.scss';
+@import 'styles/mixins.module.scss';
 
-.footerWrapper {
+.footer {
     @include smallFont;
-    display: flex;
     flex-shrink: 0;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0;
-    border-top: 1px solid $border-color;
     color: $dark-grey;
-    max-width: $screen-md;
     width: 100%;
-    margin: 0 auto;
 
-    @media screen and (max-width: $screen-md) {
+    .content {
+        display: flex;
         flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        margin: 0 15px;
+        max-width: $screen-md;
+        border-top: 1px solid $border-color;
 
-        .linksWrapper li {
-               
-            margin: 20px 0;
-        }
-        .copyrightWrapper {
-            margin-top: 20px;
-        }
-    }
-
-    @media screen and (min-width: $screen-md) {
-        padding: 23px 0;
-
-        .copyrightWrapper {
-            order: 1;
-        }
-
-        .linksWrapper {
-            order: 2;
+        .links {
 
             li {
-                display: inline-block;
-                margin: 0 10px;
+                text-align: center;
+                margin-bottom: 20px;
+
+                &:hover {
+                    color: $dark-black;
+                    transition: $standart-transition;
+                }
+
+                @media (min-width: $screen-sm){
+                    display: inline-block;
+                    margin: 0 16px;
+                }
+            }
+
+            @media (min-width: $screen-sm){
+                order: 2;
             }
         }
 
-        .socialMediaWrapper {
-            order: 3;
+        .socialMedia {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0 40px 0;
+
+            .socialMediaIcon {
+                max-width: 33px;
+                max-height: 33px;
+                margin: 0 20px;
+
+                &:hover path {
+                    fill: $dark-black;
+                    transition: $standart-transition;
+                }
+
+                @media (min-width: $screen-sm){
+                    max-width: 20px;
+                    max-height: 20px;
+                    margin: 0 0 0 15px;
+                }
+            }
+
+            @media (min-width: $screen-sm){
+                order: 3;
+                margin: 0;
+            }
         }
-    }
-}
 
-.linksWrapper {
-    text-align: center;
-    margin: 0;
-    padding: 0;
+        .copyright {
+            
+            @media (min-width: $screen-sm){
+                order: 1;
+            }
+        }
 
-    li:hover {
-        color: $dark-black;
-        transition: $standart-transition;
-    }
-}
-
-.socialMediaWrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    .socialMediaIconWrapper {
-        width: 35px;
-
-        &:nth-of-type(2) {
-            margin: 0 40px;
+        @media (min-width: $screen-sm){
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 0 auto;
+            padding: 23px 0;
         }
     }
 }

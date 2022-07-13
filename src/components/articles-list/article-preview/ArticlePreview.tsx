@@ -1,5 +1,11 @@
 import React, { FunctionComponent } from 'react';
 import Image from 'next/image';
+import {
+  DEFAULT_IMAGE_PATH,
+  DEFAULT_IMAGE_ALT,
+  DEFAULT_IMAGE_H,
+  DEFAULT_IMAGE_W,
+} from 'constants/ui';
 import type { Article } from 'models/Article';
 import { convertDateString } from 'formatters/date';
 
@@ -18,10 +24,10 @@ export const ArticlePreview: FunctionComponent<ArticleProps> = ({
     <article className={styles.article}>
       <section className={styles.content}>
         <div>
-          <div className={styles.sectionWrapper}>
+          <div className={styles.section}>
             <div className={styles.sectionTitle}>{article.section}</div>
             {!isDesktop ? (
-              <div className={styles.dateWrapper}>
+              <div className={styles.date}>
                 {convertDateString(article.published_date)}
               </div>
             ) : null}
@@ -30,17 +36,23 @@ export const ArticlePreview: FunctionComponent<ArticleProps> = ({
           <p className={styles.paragraph}>{article.abstract}</p>
         </div>
         {isDesktop ? (
-          <div className={styles.dateWrapper}>
+          <div className={styles.date}>
             {convertDateString(article.published_date)}
           </div>
         ) : null}
       </section>
-      <div className={styles.imageWrapper}>
+      <div className={styles.image}>
         <Image
-          src={article.multimedia ? article.multimedia[1].url : '/logo.svg'}
-          alt={article.multimedia ? article.title : 'No image'}
-          width={article.multimedia ? article.multimedia[1].width : 129}
-          height={article.multimedia ? article.multimedia[1].height : 28}
+          src={
+            article.multimedia ? article.multimedia[1].url : DEFAULT_IMAGE_PATH
+          }
+          alt={article.title ? article.title : DEFAULT_IMAGE_ALT}
+          width={
+            article.multimedia ? article.multimedia[1].width : DEFAULT_IMAGE_W
+          }
+          height={
+            article.multimedia ? article.multimedia[1].height : DEFAULT_IMAGE_H
+          }
           layout="responsive"
         />
       </div>

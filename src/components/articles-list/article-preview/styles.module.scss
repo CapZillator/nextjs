@@ -1,4 +1,5 @@
 @import 'styles/variables.module.scss';
+@import 'styles/mixins.module.scss';
 
 .article {
     position: relative;
@@ -6,7 +7,6 @@
     flex-direction: column;
     max-width: $screen-md;
     margin: 20px auto;
-    overflow: hidden;
     background-color: $main-white;
     color: $dark-black; 
     box-shadow: $shadow-sm;
@@ -16,9 +16,14 @@
         flex-direction: column;
         justify-content: space-between;
         padding: 20px 15px;
+
+        @media (min-width: $screen-sm){
+            width: 50%;
+            padding: 40px;
+        }
     }
 
-    .sectionWrapper {
+    .section {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -29,7 +34,7 @@
             @include sectionHeader;
         }
 
-        .dateWrapper {
+        .date {
             @include smallFont;
         }
     }
@@ -44,28 +49,24 @@
 
     .paragraph {
         @include articleParagraphFont;
+
+        @media (min-width: $screen-sm){
+            margin-bottom: 40px;
+        }
     }
 
-    .imageWrapper {
+    .image {
         position: relative;
         
+        @media (min-width: $screen-sm){
+            width: 50%;
+            max-height: 400px;
+        }
     }
 
     @media (min-width: $screen-sm){
         flex-direction: row;
         justify-content: space-between;
         border-radius: $border-radius-st;
-
-        .content {
-            width: 50%;
-            padding: 40px;
-        }
-
-        .paragraph {
-            margin-bottom: 40px;
-        }
-        .imageWrapper { 
-            width: 50%;
-        }
     }
 }

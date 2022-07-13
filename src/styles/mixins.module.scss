@@ -1,0 +1,53 @@
+@import 'variables.module.scss';
+
+/* Fonts */
+@mixin smallFont {
+    font-style: normal;
+    font-weight: $font-style-thin;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+@mixin articleParagraphFont {
+    font-style: normal;
+    font-weight: $font-style-thin;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+@mixin headerFont {
+    font-style: normal;
+    font-weight: $font-style-bolder;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+@mixin mainArticleHeader {
+    color: $dark-hover;
+    font-weight: $font-style-bolder;
+    font-size: 28px;
+    line-height: 38px;
+}
+
+@mixin sectionHeader {
+    color: $main-white;
+    background-color: $pink-base;
+    text-transform: capitalize;
+    font-weight: $font-style-bolder;
+    font-size: 16px;
+    line-height: 18px;
+    padding: 4px 8px;
+    border-radius: $border-radius-sm;
+}
+
+/* Loaders */
+@mixin articleLoader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $pink-base;
+    padding: .5rem 1rem;
+    color: $main-white;
+    border-radius: $border-radius-sm;
+}
