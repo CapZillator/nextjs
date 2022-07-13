@@ -12,17 +12,17 @@ export const Footer: FunctionComponent = () => {
     { title: 'Terms of Service', link: '#' },
   ];
 
-  const footerLinksBlock = footerLinks.map((link) => {
-    return (
-      <li key={link.title}>
-        <a href={link.link}>{link.title}</a>
-      </li>
-    );
-  });
-
   return (
     <footer className={footerStyles.footerWrapper}>
-      <ul className={footerStyles.linksWrapper}>{footerLinksBlock}</ul>
+      <ul className={footerStyles.linksWrapper}>
+        {footerLinks.map((link) => {
+          return (
+            <li key={link.title}>
+              <a href={link.link}>{link.title}</a>
+            </li>
+          );
+        })}
+      </ul>
       <div className={footerStyles.socialMediaWrapper}>
         <div className={footerStyles.socialMediaIconWrapper}>
           <a href="#">

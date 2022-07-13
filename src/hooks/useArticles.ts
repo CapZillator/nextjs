@@ -4,10 +4,10 @@ import { storiesFetcher } from 'service/storiesFetcher';
 
 export const useArticles = (category = 'home') => {
   const { data, error } = useSWR(
-    `${BASE_URL_PATH}/${category}`,
+    `${category}`,
     storiesFetcher.bind(
       null,
-      `${BASE_URL_PATH}${TOP_STORIES_PATH}/${category}.json?api-key=${NYC_API_KEY}`
+      `${TOP_STORIES_PATH}/${category}.json?api-key=${NYC_API_KEY}`
     )
   );
 

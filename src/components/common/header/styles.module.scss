@@ -35,9 +35,10 @@
             border-bottom: 4px solid transparent;
             transition: $standart-transition;
         }
+        
         li:hover, 
         li:active {
-            color: #161616;
+            color: $dark-black;
             border-bottom: 4px solid $pink-base;
         }
     }    
@@ -51,6 +52,7 @@
     .headerMenuButton {
         display: none;
     }
+
     .headerMenuLinks {
         display: block;
     }

@@ -8,7 +8,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px 0;
-    border-top: 1px solid #D1D1D1;
+    border-top: 1px solid $border-color;
     color: $dark-grey;
     max-width: $screen-md;
     width: 100%;
@@ -18,7 +18,8 @@
         flex-direction: column;
 
         .linksWrapper li {
-                margin: 20px 0;
+               
+            margin: 20px 0;
         }
         .copyrightWrapper {
             margin-top: 20px;
@@ -46,16 +47,18 @@
         }
     }
 }
+
 .linksWrapper {
     text-align: center;
     margin: 0;
     padding: 0;
 
     li:hover {
-        color: $dark-hover;
+        color: $dark-black;
         transition: $standart-transition;
     }
 }
+
 .socialMediaWrapper {
     display: flex;
     justify-content: center;
