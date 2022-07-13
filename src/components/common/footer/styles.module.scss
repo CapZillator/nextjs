@@ -1,8 +1,8 @@
 /* Footer styles */
-@import '@/styles/variables.module.scss';
+@import 'styles/variables.module.scss';
 
 .footerWrapper {
-    @include footerFont;
+    @include smallFont;
     display: flex;
     flex-shrink: 0;
     justify-content: space-between;
@@ -10,11 +10,11 @@
     padding: 20px 0;
     border-top: 1px solid #D1D1D1;
     color: $dark-grey;
-    max-width: $desktop-screen;
+    max-width: $screen-md;
     width: 100%;
     margin: 0 auto;
 
-    @media screen and (max-width: $desktop-screen) {
+    @media screen and (max-width: $screen-md) {
         flex-direction: column;
 
         .linksWrapper li {
@@ -25,7 +25,7 @@
         }
     }
 
-    @media screen and (min-width: $desktop-screen) {
+    @media screen and (min-width: $screen-md) {
         padding: 23px 0;
 
         .copyrightWrapper {

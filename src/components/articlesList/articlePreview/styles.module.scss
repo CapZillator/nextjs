@@ -1,0 +1,71 @@
+@import 'styles/variables.module.scss';
+
+.article {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width: $screen-md;
+    margin: 20px auto;
+    overflow: hidden;
+    background-color: $main-white;
+    color: $dark-black; 
+    box-shadow: $shadow-sm;
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 20px 15px;
+    }
+
+    .sectionWrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+
+        .sectionTitle {
+            @include sectionHeader;
+        }
+
+        .dateWrapper {
+            @include smallFont;
+        }
+    }
+
+    .title {
+        margin-bottom: 16px;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    .paragraph {
+        @include articleParagraphFont;
+    }
+
+    .imageWrapper {
+        position: relative;
+        
+    }
+
+    @media (min-width: $screen-sm){
+        flex-direction: row;
+        justify-content: space-between;
+        border-radius: $border-radius-st;
+
+        .content {
+            width: 50%;
+            padding: 40px;
+        }
+
+        .paragraph {
+            margin-bottom: 40px;
+        }
+        .imageWrapper { 
+            width: 50%;
+        }
+    }
+}
