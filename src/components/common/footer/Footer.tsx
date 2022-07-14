@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
-import { Twitter } from './svg/Twitter';
-import { Facebook } from './svg/Facebook';
-import { Instagram } from './svg/Instagram';
+import Twitter from './svg/Twitter';
+import Facebook from './svg/Facebook';
+import Instagram from './svg/Instagram';
 
 import styles from './styles.module.scss';
 
@@ -28,13 +28,13 @@ export const Footer: FunctionComponent = () => {
         </ul>
         <div className={styles.socialMedia}>
           <a href="#">
-            <Twitter style={styles.socialMediaIcon} />
+            <Twitter className={styles.socialMediaIcon} />
           </a>
           <a href="#">
-            <Facebook style={styles.socialMediaIcon} />
+            <Facebook className={styles.socialMediaIcon} />
           </a>
           <a href="#">
-            <Instagram style={styles.socialMediaIcon} />
+            <Instagram className={styles.socialMediaIcon} />
           </a>
         </div>
         <div className={styles.copyright}>
