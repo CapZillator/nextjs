@@ -1,5 +1,9 @@
 import React, { FunctionComponent } from 'react';
+<<<<<<< HEAD
 import Link from 'next/link';
+=======
+import { MEDIA_QUERY_DESKTOP } from 'constants/ui';
+>>>>>>> workflow3
 import type { Article as ArticleModel } from 'models/Article';
 import { useMediaQuery } from 'usehooks-ts';
 import { useArticles } from 'hooks/useArticles';
@@ -9,7 +13,7 @@ import styles from './styles.module.scss';
 
 /* Return list of articles */
 export const ArticlesList: FunctionComponent = () => {
-  const isDesktop = useMediaQuery('(min-width: 768px)');
+  const isDesktop = useMediaQuery(MEDIA_QUERY_DESKTOP);
   const { articles, isLoading, isError } = useArticles('home');
 
   if (isError) {

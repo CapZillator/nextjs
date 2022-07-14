@@ -2,71 +2,70 @@
 @import 'styles/mixins.module.scss';
 
 .article {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    max-width: $screen-md;
-    margin: 20px auto;
-    background-color: $main-white;
-    color: $dark-black; 
-    box-shadow: $shadow-sm;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: $screen-md;
+  margin: 20px auto;
+  background-color: $main-white;
+  color: $dark-black;
+  box-shadow: $shadow-sm;
 
-    @media (min-width: $screen-sm){
-        flex-direction: row;
-        justify-content: space-between;
-        border-radius: $border-radius-st;
-    }
+  @media (min-width: $screen-sm) {
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: $border-radius-st;
+  }
 }
 
 .content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 15px;
 
-    @media (min-width: $screen-sm){
-        width: 50%;
-        padding: 40px;
-    }
+  @media (min-width: $screen-sm) {
+    width: 50%;
+    padding: 40px;
+  }
 }
 
 .section {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 
-    .sectionTitle {
-        @include sectionHeader;
-    }
+  .sectionTitle {
+    @include sectionHeader;
+  }
 
-    .date {
-        @include smallFont;
-    }
+  .date {
+    @include smallFont;
+  }
 }
 
 .title {
-    margin-bottom: 16px;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 28px;
+  margin-bottom: 16px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
 }
 
 .paragraph {
-    @include articleParagraphFont;
+  @include articleParagraphFont;
 
-    @media (min-width: $screen-sm){
-        margin-bottom: 40px;
-    }
+  @media (min-width: $screen-sm) {
+    margin-bottom: 40px;
+  }
 }
 
 .image {
-    position: relative;
-    
-    @media (min-width: $screen-sm){
-        width: 50%;
-        max-height: 400px;
-    }
+  position: relative;
+
+  @media (min-width: $screen-sm) {
+    width: 50%;
+  }
 }
