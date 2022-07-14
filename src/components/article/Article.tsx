@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { NYC_MULTIMEDIA_URL_BASE } from 'constants/global';
+//import { NYC_MULTIMEDIA_URL_BASE } from 'constants/global';
 import {
   DEFAULT_IMAGE_PATH,
   DEFAULT_IMAGE_ALT,
@@ -46,19 +46,15 @@ export const Article: FunctionComponent = () => {
         <Image
           src={
             searchResult.response.docs[0].multimedia[0]
-              ? `${NYC_MULTIMEDIA_URL_BASE}/${searchResult.response.docs[0].multimedia[0].url}`
+              ? `https://static01.nyt.com/${searchResult.response.docs[0].multimedia[0].url}`
               : DEFAULT_IMAGE_PATH
           }
           alt={artID ?? DEFAULT_IMAGE_ALT}
           width={
-            searchResult.response.docs[0].multimedia[0]
-              ? searchResult.response.docs[0].multimedia[0].width
-              : DEFAULT_IMAGE_W
+            searchResult?.response?.docs?.[0].multimedia?.[0].width ?? DEFAULT_IMAGE_W
           }
           height={
-            searchResult.response.docs[0].multimedia[0]
-              ? searchResult.response.docs[0].multimedia[0].height
-              : DEFAULT_IMAGE_H
+            searchResult?.response?.docs?.[0].multimedia?.[0].height ?? DEFAULT_IMAGE_H
           }
           layout="responsive"
         />
