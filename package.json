@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|jsx|ts|tsx|json)\"",
-    "format-styles": "stylelint-prettier --ignore-path .gitignore \"**/*.+(scss|css)\""
+    "fix-styles": "prettier-stylelint --ignore-path .gitignore 'src/**/*.{css,scss}'"
   },
   "dependencies": {
     "next": "12.2.0",
@@ -25,8 +25,6 @@
     "eslint-plugin-react": "^7.30.1",
     "prettier": "^2.7.1",
     "sass": "^1.53.0",
-    "stylelint": "^14.9.1",
-    "stylelint-prettier": "^2.0.0",
     "typescript": "4.7.4",
     "usehooks-ts": "^2.6.0"
   }
