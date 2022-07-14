@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-import headerStyles from './styles.module.scss';
+import header from './styles.module.scss';
 
 const HEADER_LINKS = [
   { title: 'Home', link: '#' },
@@ -14,15 +14,15 @@ const HEADER_LINKS = [
 
 export const Header: FunctionComponent = () => {
   return (
-    <header className={headerStyles.header}>
-      <div className={headerStyles.content}>
+    <header className={header.header}>
+      <div className={header.content}>
         <Link href="/">
           <a>
             <Image src="/logo.svg" alt="Main Logo" width={129} height={28} />
           </a>
         </Link>
 
-        <div className={headerStyles.menuButton}>
+        <div className={header.menuButton}>
           <Image
             src="/burger-menu.svg"
             alt="Menu button"
@@ -31,7 +31,7 @@ export const Header: FunctionComponent = () => {
           />
         </div>
 
-        <nav className={headerStyles.menuLinks}>
+        <nav className={header.menuLinks}>
           <ul>
             {HEADER_LINKS.map((link) => {
               return (
