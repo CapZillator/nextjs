@@ -1,8 +1,8 @@
 import React, { FunctionComponent } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+import { Logo, MenuButton } from 'components/icons';
 
-import header from './styles.module.scss';
+import styles from './styles.module.scss';
 
 const HEADER_LINKS = [
   { title: 'Home', link: '#' },
@@ -14,34 +14,27 @@ const HEADER_LINKS = [
 
 export const Header: FunctionComponent = () => {
   return (
-    <header className={header.header}>
-      <div className={header.content}>
+    <header className={styles.header}>
+      <div className={styles.content}>
         <Link href="/">
           <a>
-            <Image src="/logo.svg" alt="Main Logo" width={129} height={28} />
+            <Logo />
           </a>
         </Link>
 
-        <div className={header.menuButton}>
-          <Image
-            src="/burger-menu.svg"
-            alt="Menu button"
-            width={24}
-            height={20}
-          />
+        <div className={styles.menuButton}>
+          <MenuButton />
         </div>
 
-        <nav className={header.menuLinks}>
-          <ul>
-            {HEADER_LINKS.map((link) => {
-              return (
-                <li key={link.title}>
-                  <a href={link.link}>{link.title}</a>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
+        <ul className={styles.menuLinks}>
+          {HEADER_LINKS.map((link) => {
+            return (
+              <li key={link.title}>
+                <a href={link.link}>{link.title}</a>
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </header>
   );

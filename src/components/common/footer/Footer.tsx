@@ -1,7 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import Twitter from './svg/Twitter';
-import Facebook from './svg/Facebook';
-import Instagram from './svg/Instagram';
+import { Facebook, Twitter, Instagram } from 'components/icons';
 
 import styles from './styles.module.scss';
 
