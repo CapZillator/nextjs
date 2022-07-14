@@ -1,9 +1,6 @@
 import React, { FunctionComponent } from 'react';
-<<<<<<< HEAD
 import Link from 'next/link';
-=======
 import { MEDIA_QUERY_DESKTOP } from 'constants/ui';
->>>>>>> workflow3
 import type { Article as ArticleModel } from 'models/Article';
 import { useMediaQuery } from 'usehooks-ts';
 import { useArticles } from 'hooks/useArticles';

@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-//import { NYC_MULTIMEDIA_URL_BASE } from 'constants/global';
+import { NYC_MULTIMEDIA_URL_BASE } from 'constants/global';
 import {
   DEFAULT_IMAGE_PATH,
   DEFAULT_IMAGE_ALT,
@@ -34,7 +34,7 @@ export const Article: FunctionComponent = () => {
 
   return (
     <article className={styles.article}>
-      <div className={styles.articleHead}>
+      <div className={styles.head}>
         <div className={styles.sectionHeader}>
           {searchResult.response.docs[0].section_name}
         </div>
@@ -46,15 +46,17 @@ export const Article: FunctionComponent = () => {
         <Image
           src={
             searchResult.response.docs[0].multimedia[0]
-              ? `https://static01.nyt.com/${searchResult.response.docs[0].multimedia[0].url}`
+              ? `${NYC_MULTIMEDIA_URL_BASE}/${searchResult.response.docs[0].multimedia[0].url}`
               : DEFAULT_IMAGE_PATH
           }
           alt={artID ?? DEFAULT_IMAGE_ALT}
           width={
-            searchResult?.response?.docs?.[0].multimedia?.[0].width ?? DEFAULT_IMAGE_W
+            searchResult?.response?.docs?.[0].multimedia?.[0].width ??
+            DEFAULT_IMAGE_W
           }
           height={
-            searchResult?.response?.docs?.[0].multimedia?.[0].height ?? DEFAULT_IMAGE_H
+            searchResult?.response?.docs?.[0].multimedia?.[0].height ??
+            DEFAULT_IMAGE_H
           }
           layout="responsive"
         />
@@ -63,6 +65,10 @@ export const Article: FunctionComponent = () => {
         <h2 className={styles.contentHeader}>
           {searchResult.response.docs[0].headline.main}
         </h2>
+        <blockquote className={styles.quotation}>
+          &ldquo;Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
+          consectetur, adipisci velit...&rdquo;
+        </blockquote>
         <p className={styles.paragraph}>
           {searchResult.response.docs[0].abstract}
         </p>

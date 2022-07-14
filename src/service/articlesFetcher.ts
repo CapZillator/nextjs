@@ -13,6 +13,6 @@ export const articlesFetcher = async (category: string) => {
 
 export const articleFetcher = async (id: string) => {
   return fetch(
-    `${ARTICLE_SEARCH_PATH}.json?fq=uri:("${NYC_ARTICLE_PATH}${id}")&api-key=${NYC_API_KEY}`
+    `${ARTICLE_SEARCH_PATH}.json?fq=uri:("${NYC_ARTICLE_PATH}/${id}")&api-key=${NYC_API_KEY}`
   ).then((res) => res.json());
 };

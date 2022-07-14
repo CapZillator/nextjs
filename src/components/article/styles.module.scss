@@ -3,75 +3,85 @@
 @import 'styles/mixins.module.scss';
 
 .article {
-    position: relative;
-    max-width: $screen-semi-md;
-    margin: 0 auto;
-    background-color: $main-white;
+  position: relative;
+  max-width: $screen-semi-md;
+  margin: 0 auto;
+  background-color: $main-white;
 
-    .articleHead {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px 15px;
+  @media (min-width: $screen-sm) {
+    padding: 0 15px;
+  }
 
-        @media (min-width: $screen-sm){
-            justify-content: flex-start;
-            padding: 40px 0;
-    
-            & > div:nth-of-type(2) {
-                margin-left: 20px;
-            }
-        }
-    }
-
-    .sectionHeader {
-        @include sectionHeader;
-    }
-
-    .pubDate {
-        @include smallFont;
-    }
-    
-    .image {
-        margin-bottom: 20px;
-
-        @media (min-width: $screen-sm){
-            margin-bottom: 40px;
-        }
-    }
-
-    .contentHeader {
-        @include mainArticleHeader;
-        padding: 0 15px;
-        margin-bottom: 40px;
-
-        @media (min-width: $screen-sm){
-            padding: 0;
-        }
-    }
-    
-    .paragraph {
-        @include articleParagraphFont;
-        padding: 0 15px;
-        margin-bottom: 20px;
-       
-
-        @media (min-width: $screen-sm){
-            padding: 0;
-            margin-bottom: 40px;
-        }
-    }
-
-    @media (min-width: $screen-sm){
-        padding: 0 15px;
-    }
-
-    @media (min-width: $screen-semi-md){
-        padding: 0;
-    }
+  @media (min-width: $screen-semi-md) {
+    padding: 0;
+  }
 }
 
-.errorMessage, 
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 15px;
+
+  @media (min-width: $screen-sm) {
+    justify-content: flex-start;
+    padding: 40px 0;
+
+    & > div:nth-of-type(2) {
+      margin-left: 20px;
+    }
+  }
+}
+
+.sectionHeader {
+  @include sectionHeader;
+}
+
+.pubDate {
+  @include smallFont;
+}
+
+.image {
+  margin-bottom: 20px;
+
+  @media (min-width: $screen-sm) {
+    margin-bottom: 40px;
+  }
+}
+
+.contentHeader {
+  @include mainArticleHeader;
+  padding: 0 15px;
+  margin-bottom: 16px;
+
+  @media (min-width: $screen-sm) {
+    padding: 0;
+  }
+}
+
+.quotation {
+  @include articleParagraphFont;
+  margin-bottom: 40px;
+  padding: 0 15px;
+  font-style: italic;
+
+  @media (min-width: $screen-sm) {
+    padding: 0;
+  }
+}
+
+.paragraph {
+  @include articleParagraphFont;
+  padding: 0 15px;
+  margin-bottom: 20px;
+
+  @media (min-width: $screen-sm) {
+    padding: 0;
+    margin-bottom: 40px;
+  }
+}
+
+.errorMessage,
 .loader {
-    @include articleLoader;
+  @include articleLoader;
 }
