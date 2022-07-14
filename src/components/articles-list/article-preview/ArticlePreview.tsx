@@ -43,16 +43,10 @@ export const ArticlePreview: FunctionComponent<ArticleProps> = ({
       </section>
       <div className={styles.image}>
         <Image
-          src={
-            article.multimedia ? article.multimedia[1].url : DEFAULT_IMAGE_PATH
-          }
-          alt={article.title ? article.title : DEFAULT_IMAGE_ALT}
-          width={
-            article.multimedia ? article.multimedia[1].width : DEFAULT_IMAGE_W
-          }
-          height={
-            article.multimedia ? article.multimedia[1].height : DEFAULT_IMAGE_H
-          }
+          src={article?.multimedia?.[1].url ?? DEFAULT_IMAGE_PATH}
+          alt={article.title ?? DEFAULT_IMAGE_ALT}
+          width={article?.multimedia?.[1].width ?? DEFAULT_IMAGE_W}
+          height={article?.multimedia?.[1].height ?? DEFAULT_IMAGE_H}
           layout="responsive"
         />
       </div>
