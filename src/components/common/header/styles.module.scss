@@ -1,57 +1,57 @@
 /* Header styles */
-@import "styles/variables.module.scss";
-@import "styles/mixins.module.scss";
+@import 'styles/variables.module.scss';
+@import 'styles/mixins.module.scss';
 
 .header {
-    @include headerFont;
-    position: relative;
-    width: 100%;
-    color: $dark-grey;
-    box-shadow: $shadow-md;
-    z-index: 50;
+  @include headerFont;
+  position: relative;
+  width: 100%;
+  color: $dark-grey;
+  box-shadow: $shadow-md;
+  z-index: 50;
 }
 
 .content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: $screen-md;
-    margin: 0 auto;
-    padding: 16px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: $screen-md;
+  margin: 0 auto;
+  padding: 16px 15px;
 
-    @media (min-width: $screen-sm) {
-        padding: 0 15px;
-    }
+  @media (min-width: $screen-sm) {
+    padding: 0 15px;
+  }
 
-    @media (min-width: $screen-md) {
-        padding: 0;
-    }
+  @media (min-width: $screen-md) {
+    padding: 0;
+  }
 }
 
 .menuLinks {
-    display: none;
+  display: none;
 
-    li {
-        display: inline-block;
-        margin-left: 32px;
-        padding: 18px 0 14px 0;
-        border-bottom: 4px solid transparent;
-        transition: $standart-transition;
+  li {
+    display: inline-block;
+    margin-left: 32px;
+    padding: 18px 0 14px 0;
+    border-bottom: 4px solid transparent;
+    transition: $standart-transition;
 
-        &:hover,
-        &:active {
-            color: $dark-black;
-            border-bottom: 4px solid $pink-base;
-        }
+    &:hover,
+    &:active {
+      color: $dark-black;
+      border-bottom: 4px solid $pink-base;
     }
+  }
 
-    @media (min-width: $screen-sm) {
-        display: block;
-    }
+  @media (min-width: $screen-sm) {
+    display: block;
+  }
 }
 
 .menuButton {
-    @media (min-width: $screen-sm) {
-        display: none;
-    }
+  @media (min-width: $screen-sm) {
+    display: none;
+  }
 }
