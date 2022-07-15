@@ -1,4 +1,6 @@
 import React, { FunctionComponent } from 'react';
+import Image from 'next/image';
+import { useRouter } from 'next/router';
 import { NYC_MULTIMEDIA_URL_BASE } from 'constants/global';
 import {
   DEFAULT_IMAGE_PATH,
@@ -6,8 +8,6 @@ import {
   DEFAULT_IMAGE_H,
   DEFAULT_IMAGE_W,
 } from 'constants/ui';
-import Image from 'next/image';
-import { useRouter } from 'next/router';
 import { useArticleSearch } from 'hooks/useArticleSearch';
 import { convertDateString } from 'formatters/date';
 
@@ -51,11 +51,11 @@ export const Article: FunctionComponent = () => {
           }
           alt={artID ?? DEFAULT_IMAGE_ALT}
           width={
-            searchResult?.response?.docs?.[0].multimedia?.[0].width ??
+            searchResult?.response?.docs?.[0].multimedia?.[0]?.width ??
             DEFAULT_IMAGE_W
           }
           height={
-            searchResult?.response?.docs?.[0].multimedia?.[0].height ??
+            searchResult?.response?.docs?.[0].multimedia?.[0]?.height ??
             DEFAULT_IMAGE_H
           }
           layout="responsive"

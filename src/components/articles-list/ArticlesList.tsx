@@ -31,6 +31,7 @@ export const ArticlesList: FunctionComponent = () => {
           <Link
             key={article.short_url}
             href={`/article/${article.uri.split('/').pop()}`}
+            passHref
           >
             <a>
               <ArticlePreview article={article} isDesktop={isDesktop} />
