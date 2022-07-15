@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from 'react';
+import Link from 'next/link';
 import { useMediaQuery } from 'usehooks-ts';
 import { MEDIA_QUERY_DESKTOP } from 'constants/ui';
 import type { Article as ArticleModel } from 'models/Article';
@@ -27,11 +28,14 @@ export const ArticlesList: FunctionComponent = () => {
     <>
       {articles?.results?.map((article: ArticleModel) => {
         return (
-          <ArticlePreview
+          <Link
             key={article.short_url}
-            article={article}
-            isDesktop={isDesktop}
-          />
+            href={`/article/${article.uri.split('/').pop()}`}
+          >
+            <a>
+              <ArticlePreview article={article} isDesktop={isDesktop} />
+            </a>
+          </Link>
         );
       })}
     </>
