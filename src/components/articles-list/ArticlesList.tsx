@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useMediaQuery } from 'usehooks-ts';
 import { MEDIA_QUERY_DESKTOP } from 'constants/ui';
@@ -9,8 +9,11 @@ import { ArticlePreview } from './article-preview/ArticlePreview';
 import styles from './styles.module.scss';
 
 export const ArticlesList: FunctionComponent = () => {
-  const isDesktop = useMediaQuery(MEDIA_QUERY_DESKTOP);
+  const [isDesktop, setIsDesktop] = useState(false);
+  const isDesktopMediaQuery = useMediaQuery(MEDIA_QUERY_DESKTOP);
   const { articles, isLoading, isError } = useArticles('home');
+
+  useEffect(() => setIsDesktop(isDesktopMediaQuery), [isDesktopMediaQuery]);
 
   if (isError) {
     return <div className={styles.errorMessage}>Error message</div>;

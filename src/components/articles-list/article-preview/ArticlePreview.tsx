@@ -47,6 +47,8 @@ export const ArticlePreview: FunctionComponent<ArticleProps> = ({
           alt={article.title ?? DEFAULT_IMAGE_ALT}
           width={article?.multimedia?.[1].width ?? DEFAULT_IMAGE_W}
           height={article?.multimedia?.[1].height ?? DEFAULT_IMAGE_H}
+          placeholder="blur"
+          blurDataURL={article?.multimedia?.[1].url ?? DEFAULT_IMAGE_PATH}
           layout="responsive"
         />
       </div>

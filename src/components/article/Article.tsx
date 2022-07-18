@@ -59,6 +59,10 @@ export const Article: FunctionComponent = () => {
             DEFAULT_IMAGE_H
           }
           layout="responsive"
+          placeholder="blur"
+          blurDataURL={searchResult.response.docs[0].multimedia[0]
+            ? `${NYC_MULTIMEDIA_URL_BASE}/${searchResult.response.docs[0].multimedia[0].url}`
+            : DEFAULT_IMAGE_PATH}
         />
       </div>
       <section>
