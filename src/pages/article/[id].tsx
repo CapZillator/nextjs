@@ -25,13 +25,13 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     return {
       props: {
         fallback: {
-          [id]: article
-        }
-      }
-    }
+          [id]: article,
+        },
+      },
+    };
   } catch (e) {
     return { notFound: true };
-  };
-}
+  }
+};
 
 export default ArticlePage;

@@ -13,8 +13,8 @@ import { convertDateString } from 'formatters/date';
 import styles from './styles.module.scss';
 
 type ArticleProps = {
-  id: string
-}
+  id: string;
+};
 
 export const Article: FunctionComponent<ArticleProps> = ({ id }) => {
   const { searchResult, isLoading, isError, isFound } = useArticleSearch(id);
@@ -59,9 +59,11 @@ export const Article: FunctionComponent<ArticleProps> = ({ id }) => {
           }
           layout="responsive"
           placeholder="blur"
-          blurDataURL={searchResult.response.docs[0].multimedia[0]
-            ? `${NYC_MULTIMEDIA_URL_BASE}/${searchResult.response.docs[0].multimedia[0].url}`
-            : DEFAULT_IMAGE_PATH}
+          blurDataURL={
+            searchResult.response.docs[0].multimedia[0]
+              ? `${NYC_MULTIMEDIA_URL_BASE}/${searchResult.response.docs[0].multimedia[0].url}`
+              : DEFAULT_IMAGE_PATH
+          }
         />
       </div>
       <section>

@@ -7,7 +7,6 @@ export const Home: NextPage = () => {
   return <ArticlesList />;
 };
 
-
 export const getServerSideProps: GetServerSideProps = async () => {
   try {
     const articles = await articlesFetcher('home');
@@ -19,14 +18,13 @@ export const getServerSideProps: GetServerSideProps = async () => {
     return {
       props: {
         fallback: {
-          'home': articles
-        }
-      }
+          home: articles,
+        },
+      },
     };
   } catch (e) {
     return { notFound: true };
-  };
-  
-}
+  }
+};
 
 export default Home;
