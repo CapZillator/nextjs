@@ -1,6 +1,5 @@
 import React, { FunctionComponent } from 'react';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
 import { NYC_MULTIMEDIA_URL_BASE } from 'constants/global';
 import {
   DEFAULT_IMAGE_PATH,
@@ -13,12 +12,12 @@ import { convertDateString } from 'formatters/date';
 
 import styles from './styles.module.scss';
 
-export const Article: FunctionComponent = () => {
-  const router = useRouter();
-  const { id } = router.query;
-  const artID = typeof id === 'string' ? id : '';
+type ArticleProps = {
+  id: string
+}
 
-  const { searchResult, isLoading, isError, isFound } = useArticleSearch(artID);
+export const Article: FunctionComponent<ArticleProps> = ({ id }) => {
+  const { searchResult, isLoading, isError, isFound } = useArticleSearch(id);
 
   if (isError) {
     return <div className={styles.errorMessage}>Error message</div>;
@@ -49,7 +48,7 @@ export const Article: FunctionComponent = () => {
               ? `${NYC_MULTIMEDIA_URL_BASE}/${searchResult.response.docs[0].multimedia[0].url}`
               : DEFAULT_IMAGE_PATH
           }
-          alt={artID ?? DEFAULT_IMAGE_ALT}
+          alt={id ?? DEFAULT_IMAGE_ALT}
           width={
             searchResult?.response?.docs?.[0].multimedia?.[0]?.width ??
             DEFAULT_IMAGE_W
