@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState, useEffect } from 'react';
+import React, { FunctionComponent } from 'react';
 import Link from 'next/link';
 import { MEDIA_QUERY_DESKTOP } from 'constants/ui';
 import type { Article as ArticleModel } from 'models/Article';

@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import { GetServerSideProps } from 'next';
-import { ArticlesList } from 'components/articles-list/ArticlesList';
 import { articlesFetcher } from 'service/articlesFetcher';
+import { ArticlesList } from 'components/articles-list/ArticlesList';
 
 export const Home: NextPage = () => {
   return <ArticlesList />;
@@ -24,7 +24,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
     };
   } catch (e) {
     return { notFound: true };
-  }
+  };
 };
 
 export default Home;
