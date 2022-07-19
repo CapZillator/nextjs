@@ -9,8 +9,9 @@ import { Article } from 'components/article/Article';
 export const ArticlePage: NextPage = () => {
   const router = useRouter();
   const { id } = router.query;
-  const artID = unstable_serialize(id);
-  return <Article id={artID} />;
+  const articleId = unstable_serialize(id);
+
+  return <Article id={articleId} />;
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
