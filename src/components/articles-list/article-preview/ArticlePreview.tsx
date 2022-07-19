@@ -14,18 +14,24 @@ import styles from './styles.module.scss';
 type ArticleProps = {
   article: Article;
   isDesktop: boolean;
+  section: string;
 };
 
 export const ArticlePreview: FunctionComponent<ArticleProps> = ({
   article,
   isDesktop,
+  section,
 }) => {
   return (
     <article className={styles.article}>
       <section className={styles.content}>
         <div>
           <div className={styles.section}>
-            <div className={styles.sectionTitle}>{article.section}</div>
+            <div className={styles.sectionTitle}>
+              {article.section && article.section.length
+                ? article.section
+                : section}
+            </div>
             {!isDesktop ? (
               <div className={styles.date}>
                 {convertDateString(article.published_date)}

@@ -8,9 +8,15 @@ import { ArticlePreview } from './article-preview/ArticlePreview';
 
 import styles from './styles.module.scss';
 
-export const ArticlesList: FunctionComponent = () => {
+type ArticlesListProps = {
+  section: string;
+};
+
+export const ArticlesList: FunctionComponent<ArticlesListProps> = ({
+  section,
+}) => {
   const isDesktop = useMediaQuerySSR(MEDIA_QUERY_DESKTOP);
-  const { articles, isLoading, isError } = useArticles('home');
+  const { articles, isLoading, isError } = useArticles(section);
 
   if (isError) {
     return <div className={styles.errorMessage}>Error message</div>;
@@ -26,15 +32,19 @@ export const ArticlesList: FunctionComponent = () => {
 
   return (
     <>
-      {articles?.results?.map((article: ArticleModel) => {
+      {articles?.results?.map((article: ArticleModel, i: number) => {
         return (
           <Link
-            key={article.short_url}
+            key={`${section}_${i}`}
             href={`/article/${article.uri.split('/').pop()}`}
             passHref
           >
             <a>
-              <ArticlePreview article={article} isDesktop={isDesktop} />
+              <ArticlePreview
+                article={article}
+                isDesktop={isDesktop}
+                section={section}
+              />
             </a>
           </Link>
         );
