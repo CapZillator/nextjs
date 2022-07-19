@@ -32,7 +32,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     };
   } catch (e) {
     return { notFound: true };
-  };
+  }
 };
 
 export default ArticlePage;

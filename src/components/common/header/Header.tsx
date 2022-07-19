@@ -5,11 +5,11 @@ import { Logo, MenuButton } from 'components/icons';
 import styles from './styles.module.scss';
 
 const HEADER_LINKS = [
-  { title: 'Home', link: '#' },
-  { title: 'World', link: '#' },
-  { title: 'Automobiles', link: '#' },
-  { title: 'Real Estate', link: '#' },
-  { title: 'Finance', link: '#' },
+  { title: 'Home', link: '/' },
+  { title: 'Business', link: '/business' },
+  { title: 'Technology', link: '/technology' },
+  { title: 'US', link: '/us' },
+  { title: 'Arts', link: '/arts' },
 ];
 
 export const Header: FunctionComponent = () => {

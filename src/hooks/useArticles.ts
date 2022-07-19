@@ -1,7 +1,7 @@
 import useSWR from 'swr';
 import { articlesFetcher } from 'service/articlesFetcher';
 
-export const useArticles = (category = 'home') => {
+export const useArticles = (category: string) => {
   const { data, error } = useSWR(category, articlesFetcher);
 
   return {

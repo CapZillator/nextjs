@@ -4,7 +4,7 @@ import { articlesFetcher } from 'service/articlesFetcher';
 import { ArticlesList } from 'components/articles-list/ArticlesList';
 
 export const Home: NextPage = () => {
-  return <ArticlesList />;
+  return <ArticlesList section={'home'} />;
 };
 
 export const getServerSideProps: GetServerSideProps = async () => {
@@ -24,7 +24,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
     };
   } catch (e) {
     return { notFound: true };
-  };
+  }
 };
 
 export default Home;

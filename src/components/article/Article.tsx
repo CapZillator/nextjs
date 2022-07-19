@@ -35,7 +35,7 @@ export const Article: FunctionComponent<ArticleProps> = ({ id }) => {
     <article className={styles.article}>
       <div className={styles.head}>
         <div className={styles.sectionHeader}>
-          {searchResult.response.docs[0].section_name}
+          {searchResult.response.docs[0].section_name ?? 'None'}
         </div>
         <div className={styles.pubDate}>
           {convertDateString(searchResult.response.docs[0].pub_date)}

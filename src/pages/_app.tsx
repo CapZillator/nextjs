@@ -17,6 +17,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       </div>
     </SWRConfig>
   );
-};
+}
 
 export default MyApp;
