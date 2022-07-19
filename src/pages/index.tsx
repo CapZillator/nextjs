@@ -18,7 +18,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
     return {
       props: {
         fallback: {
-          home: articles,
+          'home': articles,
         },
       },
     };
