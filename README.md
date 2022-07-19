@@ -37,4 +37,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## Live demo version
 
-You can try this app [here](https://nextjs-kappa-one-71.vercel.app/)
+You can try this app [here](https://nextjs-kappa-one-71.vercel.app/).
+
+Last project changes preview is [here](https://nextjs-git-step5-andreifisenka-pargoocom.vercel.app/).
